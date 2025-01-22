@@ -74,12 +74,11 @@ const AddFirm = () => {
             alert('Firm Added Successfully.');
           }
             const firmId=data.firmId;
-            alert(firmId);
+            
             localStorage.setItem('firmId',firmId)
             const presponse=await fetch(`${API_PATH}/product/getProductByFirm/${firmId}`);
             const pdata=await presponse.json();
-            console.log("This is firmdata: ",pdata)
-            alert(pdata);
+            
             if(presponse.ok)
             {  
               const firmName=pdata.firmName;
